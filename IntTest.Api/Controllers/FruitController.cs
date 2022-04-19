@@ -1,10 +1,12 @@
 ﻿using IntTest.Api.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace IntTest.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class FruitController : ControllerBase

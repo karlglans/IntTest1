@@ -21,7 +21,7 @@ namespace IntTest.Api.IntegrationTests
         {
             var client = _factory.CreateClient();
 
-            // Act http://localhost:5000/weatherforecast
+            // Act http://localhost:5000/fruit
             var response = await client.GetAsync("/fruit");
 
             var jsonString =  await response.Content.ReadAsStringAsync();

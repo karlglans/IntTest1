@@ -42,7 +42,6 @@ namespace IntTest.Api
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
-
             services.AddScoped<IUserService, UserService>();
         }
 
@@ -62,6 +61,7 @@ namespace IntTest.Api
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
